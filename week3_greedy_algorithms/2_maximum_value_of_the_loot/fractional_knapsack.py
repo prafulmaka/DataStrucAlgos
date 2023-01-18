@@ -8,6 +8,7 @@ values = data[2:(2 * n + 2):2]
 print("Values", values)
 weights = data[3:(2 * n + 2):2]
 print("Weights: ", weights)
+print("Hello")
 
 
 # # Original
