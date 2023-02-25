@@ -1,16 +1,27 @@
 from itertools import permutations
 
+# Test 1: 2; 21 2
+# Test 2: 3; 23 39 92
+
 def largest_number_naive(numbers):
     numbers = list(map(str, numbers))
 
     numbers.sort(reverse=True)
-    largest = int("".join(numbers))
 
-    largest_2 = list(map(str, str(largest)))
-    largest_2.sort(reverse=True)
-    largest_2 = int("".join(largest_2))
+    largest = []
 
-    return largest_2
+    while numbers != []:
+        max = 0
+        for item in numbers:
+            if int(str(item) + str(max)) >= int(str(max) + str(item)):
+                max = item
+        largest.append(max)
+        numbers.remove(max)
+
+    largest = int("".join(largest))
+
+    return largest
+
 
 
 if __name__ == '__main__':
