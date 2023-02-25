@@ -1,11 +1,14 @@
+_ = int(input())
+numbers = input().split()
 
-import pandas as pd
+numbers = list(map(str, numbers))
 
-# initialize list elements
-data = [10,20,30,40,50,60]
+numbers.sort(reverse=True)
 
-# Create the pandas DataFrame with column name is provided explicitly
-df = pd.DataFrame(data, columns=['Numbers'])
+largest = int("".join(numbers))
+largest_2 = list(map(int, str(largest)))
+largest_2.sort(reverse=True)
 
-# print dataframe.
-print(df)
+print("Numbers: ", numbers)
+print("Largest: ", largest)
+print("Largest_2: ", largest_2)
